@@ -200,6 +200,7 @@
             this.lblResetPassword.TabIndex = 10;
             this.lblResetPassword.TabStop = true;
             this.lblResetPassword.Text = "Şifremi Unuttum";
+            this.lblResetPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblResetPassword_LinkClicked);
             // 
             // frmLogin
             // 
