@@ -1,14 +1,7 @@
 ﻿using BilgeAdam.Common.Contracts;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WFABilgeAdam.StoreManagementMain
@@ -22,17 +15,22 @@ namespace WFABilgeAdam.StoreManagementMain
 
         private void chkForExist_MouseClick(object sender, MouseEventArgs e)
         {
-            var userEmail = txtEmail.Text;
-
-            foreach (var item in CommanConstant.userList)
+            if (chkForExist.Checked)
             {
-                if (item.Email == userEmail)
+                var userEmail = txtEmail.Text;
+                txtPassword.Text = String.Empty;
+                foreach (var item in CommanConstant.userList)
                 {
-                    var pass = item.Password.Substring(0, 2);
-                    txtPassword.Text = $"{pass}***";
+                    if (item.Email == userEmail)
+                    {
+                        var pass = item.Password.Substring(0, 2);
+                        txtPassword.Text = $"{pass}***";
+                        return;
+                    }
                 }
-                
+                MessageBox.Show("Girdiğiniz Email Sistemde Kayıtlı Değil", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else return;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -44,7 +42,12 @@ namespace WFABilgeAdam.StoreManagementMain
             {
                 if (item.Email == userEmail && item.Password == userPass)
                 {
-                    item.Password = txtResetPassword.Text;
+                    if (!(txtConfirmPassword.Text == txtResetPassword.Text))
+                    {
+                        item.Password = txtResetPassword.Text;
+                        return;
+                    }
+                    errPassword.SetError(txtResetPassword, "Şifreler Aynı Olamaz!");
                     return;
                 }
             }
