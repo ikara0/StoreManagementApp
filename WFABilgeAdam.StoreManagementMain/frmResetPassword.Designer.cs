@@ -48,7 +48,7 @@
             this.txtEmail.Location = new System.Drawing.Point(103, 29);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(125, 20);
-            this.txtEmail.TabIndex = 0;
+            this.txtEmail.TabIndex = 1;
             // 
             // txtPassword
             // 
@@ -56,7 +56,8 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.ReadOnly = true;
             this.txtPassword.Size = new System.Drawing.Size(125, 20);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 9;
+            this.txtPassword.TabStop = false;
             // 
             // label1
             // 
@@ -90,14 +91,14 @@
             this.txtConfirmPassword.Location = new System.Drawing.Point(103, 81);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(125, 20);
-            this.txtConfirmPassword.TabIndex = 1;
+            this.txtConfirmPassword.TabIndex = 2;
             // 
             // txtResetPassword
             // 
             this.txtResetPassword.Location = new System.Drawing.Point(103, 107);
             this.txtResetPassword.Name = "txtResetPassword";
             this.txtResetPassword.Size = new System.Drawing.Size(125, 20);
-            this.txtResetPassword.TabIndex = 2;
+            this.txtResetPassword.TabIndex = 3;
             // 
             // label4
             // 
@@ -113,7 +114,7 @@
             this.btnSave.Location = new System.Drawing.Point(103, 146);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(125, 23);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

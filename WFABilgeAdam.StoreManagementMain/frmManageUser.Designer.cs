@@ -97,7 +97,6 @@
             this.Name = "frmManageUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kullanıcı Yönetimi";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmManageUser_FormClosing);
             this.Load += new System.EventHandler(this.frmManageUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).EndInit();
             this.cmtUserEdit.ResumeLayout(false);
