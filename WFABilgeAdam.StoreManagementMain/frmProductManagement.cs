@@ -72,19 +72,5 @@ namespace WFABilgeAdam.StoreManagementMain
 
         }
 
-        private void frmProductManagement_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            var fileName = Path.Combine(CommanConstant.LogsDirectoryPath, "ProductLog.txt");
-            File.Delete(fileName);
-            
-            foreach(var product in CommanConstant.productList)
-            {
-                var json = JsonConvert.SerializeObject(product);
-
-                File.AppendAllText(fileName, json + Environment.NewLine);
-                
-            }
-
-        }
 }
 }

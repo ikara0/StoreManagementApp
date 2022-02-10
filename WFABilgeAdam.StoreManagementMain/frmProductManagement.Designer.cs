@@ -100,7 +100,6 @@
             this.Name = "frmProductManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ürün Yönetimi";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmProductManagement_FormClosing);
             this.Load += new System.EventHandler(this.frmProductManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProduct)).EndInit();
             this.cmsDataGridView.ResumeLayout(false);

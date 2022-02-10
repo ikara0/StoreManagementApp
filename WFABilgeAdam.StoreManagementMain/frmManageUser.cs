@@ -59,18 +59,6 @@ namespace WFABilgeAdam.StoreManagementMain
                 }
             }
         }
-        private void frmManageUser_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            var fileName = Path.Combine(CommanConstant.LogsDirectoryPath, "UserList.txt");
-            File.Delete(fileName);
-
-            foreach (var user in CommanConstant.userList)
-            {
-                var json = JsonConvert.SerializeObject(user);
-
-                File.AppendAllText(fileName, json + Environment.NewLine);
-
-            }
-        }
+        
     }
 }

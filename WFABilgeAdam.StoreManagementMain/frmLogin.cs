@@ -105,12 +105,19 @@ namespace WFABilgeAdam.StoreManagementMain
                 txtPassWord.UseSystemPasswordChar = false;
             }
         }
+
         private void lblResetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var frmResetPassword = new frmResetPassword();
             this.Hide();
             frmResetPassword.ShowDialog();
             this.Show();
+        }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CommanConstant.RefreshLogs(CommanConstant.userList, "UserList.txt");
+            CommanConstant.RefreshLogs(CommanConstant.productList, "ProductLog.txt");
         }
 
         #region Methods
